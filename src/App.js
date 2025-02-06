@@ -1,5 +1,6 @@
 import detailedorder from "./modules/detailedorder";
 import Orders from "./modules/detailedorder/orders";
+import restaurantmenu from "./modules/detailedorder/restaurantmenu";
 import { Routes, Route } from "react-router-dom";
 import { Layout, Image } from "antd";
 import sidemenu from "./components/sidemenu";
@@ -21,6 +22,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Orders />}/>
             <Route path="order/:id" element={<detailedorder />}/>
+            <Route path="menu" element={<restaurantmenu />}/>
           </Routes>
         </Content>
         <Footer style={{textAlign: 'center'}}>
