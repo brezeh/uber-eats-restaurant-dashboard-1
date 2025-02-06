@@ -1,9 +1,11 @@
 import {Card, Description, Divider, List, Button} from 'antd';
 import dishes from '.../.../src/assets/data/dashboard/dishes.json';
+import { useParams } from 'react-router-dom';
 
 const detailedorder = () => {
+    const {id} = useParams();
     return (
-    <Card title={'Order title'} style={{margin: 20}}>
+    <Card title={`Order ${id}`} style={{margin: 20}}>
       <Description bordered column={{lg: 1, md: 1, sm: 1}}>
         <Description.item label='customer'>
           Lukas Grinevicius
