@@ -2,6 +2,7 @@ import detailedorder from "./modules/detailedorder";
 import Orders from "./modules/detailedorder/orders";
 import { Routes, Route } from "react-router-dom";
 import { Layout, Image } from "antd";
+import sidemenu from "./components/sidemenu";
 
 const {Sider, Content, Footer} = Layout;
 
@@ -13,6 +14,7 @@ function App() {
           src="https://logos-world.net/wp-content/uploads/2020/11/Uber-Eats-Symbol.jpg" 
           preview={false} 
         />
+        <sidemenu />
       </Sider>
       <Layout>
         <Content>
