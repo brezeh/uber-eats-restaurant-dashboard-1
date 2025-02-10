@@ -1,19 +1,19 @@
-import {Card, Description, Divider, List, Button} from 'antd';
-import dishes from '.../.../src/assets/data/dashboard/dishes.json';
+import {Card, Descriptions, Divider, List, Button} from 'antd';
+import dishes from '../../assets/data/dishes.json';
 import { useParams } from 'react-router-dom';
 
-const detailedorder = () => {
+const DetailedOrder = () => {
     const {id} = useParams();
     return (
     <Card title={`Order ${id}`} style={{margin: 20}}>
-      <Description bordered column={{lg: 1, md: 1, sm: 1}}>
-        <Description.item label='customer'>
+      <Descriptions bordered column={{lg: 1, md: 1, sm: 1}}>
+        <Descriptions.Item label='customer'>
           Lukas Grinevicius
-        </Description.item>
-        <Description.item label='customer address'>
+        </Descriptions.Item>
+        <Descriptions.Item label='customer address'>
           address 15-29, City, Country
-        </Description.item>
-      </Description>
+        </Descriptions.Item>
+      </Descriptions>
       <Divider />
       <List 
         dataSource={dishes}
@@ -64,4 +64,4 @@ const styles = {
     }
   };
 
-export default detailedorder;
+export default DetailedOrder;
