@@ -1,4 +1,4 @@
-import orders from '.../.../assets/data/dashboard/orders.json';
+import orders from '../../assets/data/orders.json';
 import { Card, Table, Tag } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
@@ -32,7 +32,7 @@ const Orders = () => {
             title: 'Price',
             dataindex: 'price',
             key: 'price',
-            render: (price) => '${price} $'
+            render: (price) => `$${price} $`,
         },
         {
             title: 'Status',
@@ -43,12 +43,12 @@ const Orders = () => {
     ];
     return (
         <Card title={'Orders'} style={{margin: 20 }}> 
-            <table
+            <Table
                 datasource={orders}
                 columns={tablecoulmns} 
                 rowkey="orderID"
                 onrow={(orderitem) => ({
-                    onclick: () => navigate(`${orderitem.orderID}`)
+                    onclick: () => navigate(`/order/${orderitem.orderID}`),
                 })}
             />
         </Card> 
