@@ -1,9 +1,9 @@
-import detailedorder from "./modules/detailedorder";
-import Orders from "./modules/detailedorder/orders";
-import restaurantmenu from "./modules/detailedorder/restaurantmenu";
+import DetailedOrder from "./modules/detailedorder";
+import Orders from "./modules/orders";
+import RestaurantMenu from "./modules/restaurantmenu";
 import { Routes, Route } from "react-router-dom";
 import { Layout, Image } from "antd";
-import sidemenu from "./components/sidemenu";
+import SideMenu from "./components/sidemenu";
 
 const {Sider, Content, Footer} = Layout;
 
@@ -15,14 +15,14 @@ function App() {
           src="https://logos-world.net/wp-content/uploads/2020/11/Uber-Eats-Symbol.jpg" 
           preview={false} 
         />
-        <sidemenu />
+        <SideMenu />
       </Sider>
       <Layout>
         <Content>
           <Routes>
-            <Route path="/" element={<Orders />}/>
-            <Route path="order/:id" element={<detailedorder />}/>
-            <Route path="menu" element={<restaurantmenu />}/>
+            <Route path="/" element={<Orders/>}/>
+            <Route path="order/:id" element={<DetailedOrder/>}/>
+            <Route path="menu" element={<RestaurantMenu/>}/>
           </Routes>
         </Content>
         <Footer style={{textAlign: 'center'}}>
