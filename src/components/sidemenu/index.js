@@ -1,7 +1,7 @@
 import { Menu } from "antd";
 import { useNavigate } from "react-router-dom";
 
-const sidemenu = () => {
+const SideMenu = () => {
     const navigate = useNavigate();
 
     const menuitems =[
@@ -24,8 +24,8 @@ const sidemenu = () => {
     ];
 
     return (
-        <Menu items={menuitems} onClick={(menuitems) => navigate(menuitem.key)}/>
+        <Menu items={menuitems} onClick={(menuitems) => navigate(menuitems.key)}/>
     ) 
 };
 
-export default sidemenu;
+export default SideMenu;
