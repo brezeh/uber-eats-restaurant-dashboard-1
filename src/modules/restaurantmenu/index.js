@@ -1,8 +1,8 @@
 import { Card, Table, Button } from "antd";
-import dishes from '.../.../assets/data/dashboard/dishes.json';
+import dishes from '../../assets/data/dishes.json';
 import { Link } from 'react-router-dom'
 
-const restaurantmenu = () => {
+const RestaurantMenu = () => {
     const tablecoulmns = [
         {
             title: "menu item",
@@ -35,4 +35,4 @@ const restaurantmenu = () => {
     );
 };
 
-export default restaurantmenu;
+export default RestaurantMenu;
