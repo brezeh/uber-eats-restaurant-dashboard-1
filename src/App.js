@@ -1,11 +1,6 @@
-import DetailedOrder from "./modules/detailedorder";
-import Orders from "./modules/orders";
-import RestaurantMenu from "./modules/restaurantmenu";
-import CreateMenuItem from "./modules/createmenuitem";
-import OrderHistory from "./modules/orderhistory";
-import { Routes, Route } from "react-router-dom";
 import { Layout, Image } from "antd";
 import SideMenu from "./components/sidemenu";
+import AppRoutes from "./components/sidemenu/approutes";
 
 const {Sider, Content, Footer} = Layout;
 
@@ -21,13 +16,7 @@ function App() {
       </Sider>
       <Layout>
         <Content>
-          <Routes>
-            <Route path="/" element={<Orders/>}/>
-            <Route path="order/:id" element={<DetailedOrder/>}/>
-            <Route path="menu" element={<RestaurantMenu/>}/>
-            <Route path="menu/create" element={<CreateMenuItem/>}/>
-            <Route path="order-history" element={<OrderHistory/>}/>
-          </Routes>
+          <AppRoutes />
         </Content>
         <Footer style={{textAlign: 'center'}}>
           Uber Eats Restaurant Dashboard 2025
