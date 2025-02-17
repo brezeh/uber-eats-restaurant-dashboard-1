@@ -5,27 +5,27 @@ const OrderHistory = () => {
     
     const tablecoulmns = [
         {
-            title: 'order ID',
-            dataindex: 'orderID',
+            title: 'Order ID',
+            dataIndex: 'orderID',
             key: 'orderID',
         },
         {
-            title: 'delivery address',
-            dataindex: 'deliveryAddress',
+            title: 'Delivery Address',
+            dataIndex: 'deliveryAddress',
             key: 'deliveryAddress'
         },
         {
             title: 'Price',
-            dataindex: 'price',
+            dataIndex: 'price',
             key: 'price',
-            render: (price) => `$${price} $`,
+            render: (price) => `$${price}`,
         },
         {
             title: 'Status',
-            dataindex: 'status',
+            dataIndex: 'status',
             key: 'status',
             render: (status) => (
-            <Tag color={status === 'delivered' ? 'Green' : 'red'}>{status}</Tag>
+            <Tag color={status === 'Delivered' ? 'Green' : 'red'}>{status}</Tag>
             ),
         },
     ];
@@ -33,9 +33,9 @@ const OrderHistory = () => {
     return (
         <Card title={'History Orders'} style={{margin: 20 }}> 
             <Table
-                datasource={ordersHistory}
+                dataSource={ordersHistory}
                 columns={tablecoulmns} 
-                rowkey="orderID"
+                rowKey="orderID"
             />
         </Card> 
     )
