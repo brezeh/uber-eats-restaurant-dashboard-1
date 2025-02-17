@@ -5,50 +5,50 @@ import { useNavigate } from 'react-router-dom';
 const Orders = () => {
     const navigate = useNavigate ();
 
-    const renderorderstatus = (orderstatus) => {
-        if (orderstatus === 'accepted') {
-            return <Tag color={'Green'}>{orderstatus}</Tag>
+    const renderOrderStatus = (orderStatus) => {
+        if (orderStatus === 'Accepted') {
+            return <Tag color={'Green'}>{orderStatus}</Tag>;
         }  
-        if (orderstatus === 'pending') {
-            return <Tag color={'orange'}>{orderstatus}</Tag>
+        if (orderStatus === 'Pending') {
+            return <Tag color={'orange'}>{orderStatus}</Tag>;
         }  
-        if (orderstatus === 'declined') {
-            return <Tag color={'red'}>{orderstatus}</Tag>
+        if (orderStatus === 'Declined') {
+            return <Tag color={'red'}>{orderStatus}</Tag>;
         }  
     };
     
     const tablecoulmns = [
         {
-            title: 'order ID',
-            dataindex: 'orderID',
+            title: 'OrderID',
+            dataIndex: 'orderID',
             key: 'orderID',
         },
         {
-            title: 'delivery address',
-            dataindex: 'deliveryAddress',
+            title: 'Delivery Address',
+            dataIndex: 'deliveryAddress',
             key: 'deliveryAddress'
         },
         {
             title: 'Price',
-            dataindex: 'price',
+            dataIndex: 'price',
             key: 'price',
-            render: (price) => `$${price} $`,
+            render: (price) => `$${price}`,
         },
         {
             title: 'Status',
-            dataindex: 'status',
+            dataIndex: 'status',
             key: 'status',
-            render: renderorderstatus
+            render: renderOrderStatus
         }
     ];
     return (
         <Card title={'Orders'} style={{margin: 20 }}> 
             <Table
-                datasource={orders}
+                dataSource={orders}
                 columns={tablecoulmns} 
-                rowkey="orderID"
-                onrow={(orderitem) => ({
-                    onclick: () => navigate(`/order/${orderitem.orderID}`),
+                rowKey="orderID"
+                onRow={(orderItem) => ({
+                    onclick: () => navigate(`order/${orderItem.orderID}`),
                 })}
             />
         </Card> 
