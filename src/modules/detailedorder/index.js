@@ -17,28 +17,30 @@ const DetailedOrder = () => {
       <Divider />
       <List 
         dataSource={dishes}
-        renderItem={(dishitem) => (
+        renderItem={(dishItem) => (
           <List.Item>
-            <div style={{fontWeight: 'bold'}}>{dishitem.name} x{dishitem.quantity}</div>
-            <div>${dishitem.price}</div>
+            <div style={{fontWeight: 'bold'}}>
+              {dishItem.name} x{dishItem.quantity}
+            </div>
+            <div>${dishItem.price}</div>
           </List.Item> 
         )}
       />
       <Divider />
-      <div style={styles.totalsumcontainer}>
+      <div style={styles.totalSumContainer}>
         <h2>Total:</h2>
-        <h2 style={styles.totalprice}>42.96</h2>
+        <h2 style={styles.totalPrice}>42.96</h2>
       </div>
       <Divider />
-      <div style={styles.Buttonscontainer}>
-        <Button block type='danger' size='large' style={styles.Button}>
+      <div style={styles.buttonsContainer}>
+        <Button block type="danger" size="large" style={styles.Button}>
           decline Order
         </Button>
-        <Button block type='primary' size='large' style={styles.Button}>
+        <Button block type="primary" size="large" style={styles.Button}>
           accept Order
         </Button>
       </div>
-      <Button block type='primary' size='large'>
+      <Button block type="primary" size="large">
           food is done!
         </Button>
     </Card>
@@ -46,21 +48,21 @@ const DetailedOrder = () => {
 };
 
 const styles = {
-    totalsumcontainer: {
-      flexdirection: 'row',
+    totalSumContainer: {
+      flexDirection: 'row',
       display: 'flex',
     },
-    totalprice: {
-      marginleft: 'auto',
+    totalPrice: {
+      marginLeft: 'auto',
       fontWeight: 'bold'
     },
-    Buttonscontainer: {
+    buttonsContainer: {
       display: 'flex',
-      paddingbottom: 30
+      paddingBottom: 30
     },
     Button: {
-      marginright: 20,
-      marginleft: 20
+      marginRight: 20,
+      marginLeft: 20
     }
   };
 
